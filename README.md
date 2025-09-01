@@ -1,5 +1,14 @@
 # 🧠 Agente de Memória - Agent Memory
 
+## ✨ Alternativa com a API Gemini
+
+Esta versão do projeto foi adaptada para utilizar a API do Google Gemini, em vez da API da OpenAI. As principais alterações foram:
+
+-   **API de IA**: Substituição do `gpt-4` e `whisper` pela API do Gemini Pro.
+-   **Processamento de Áudio**: O áudio agora é enviado diretamente para o modelo Gemini, que realiza a transcrição e o processamento em uma única chamada.
+-   **Dependências**: A biblioteca `openai` foi substituída por `google-generativeai`.
+-   **Configuração**: A chave de API a ser configurada no arquivo `.env` é a `GEMINI_API_KEY`.
+
 ## 📋 Sobre o Projeto
 
 O **Agente de Memória** é um assistente inteligente que funciona como seu "assistente virtual", capaz de:
@@ -51,7 +60,7 @@ Este projeto é perfeito para **iniciantes em Python e IA** que querem entender 
 ## 🛠 Tecnologias Utilizadas
 
 - **Python 3.11+** - Linguagem principal
-- **OpenAI API** - Para transcrição (Whisper) e processamento de linguagem natural (GPT-4)
+- **Google Gemini API** - Para transcrição e processamento de linguagem natural
 - **PyAudio** - Para gravação de áudio
 - **Pydantic** - Para validação e estruturação de dados
 - **Python-dotenv** - Para gerenciamento de variáveis de ambiente
@@ -104,9 +113,9 @@ cd agent-memory
 pip install -r requirements.txt
 ```
 
-### 4. Configure a API Key da OpenAI
+### 4. Configure a API Key
 
-1. Crie uma conta na [OpenAI](https://platform.openai.com/)
+1. Crie uma conta no [Google AI Studio](https://aistudio.google.com/)
 2. Gere uma API Key no painel de controle
 3. Crie um arquivo `.env` na pasta `agent-memory/`:
 
@@ -117,7 +126,7 @@ touch .env
 
 4. Adicione sua API Key no arquivo `.env`:
 ```
-OPENAI_API_KEY=sua_chave_api_aqui
+GEMINI_API_KEY=sua_chave_api_aqui
 ```
 
 > ⚠️ **Importante**: Nunca compartilhe sua API Key! O arquivo `.env` já está no `.gitignore` para protegê-la.
